@@ -386,10 +386,6 @@ class Signaling {
       */
     }
     pc.onIceCandidate = (candidate) async {
-      if (candidate == null) {
-        print('onIceCandidate: complete!');
-        return;
-      }
       // This delay is needed to allow enough time to try an ICE candidate
       // before skipping to the next one. 1 second is just an heuristic value
       // and should be thoroughly tested in your own environment.
@@ -399,7 +395,7 @@ class Signaling {
                 'to': peerId,
                 'from': _selfId,
                 'candidate': {
-                  'sdpMLineIndex': candidate.sdpMlineIndex,
+                  'sdpMLineIndex': candidate.sdpMLineIndex,
                   'sdpMid': candidate.sdpMid,
                   'candidate': candidate.candidate,
                 },

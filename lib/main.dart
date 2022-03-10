@@ -78,11 +78,13 @@ class _MyAppState extends State<MyApp> {
         if (value == DialogDemoAction.connect) {
           _prefs.setString('server', _server);
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (BuildContext context) => _datachannel
-                      ? DataChannelSample(host: _server)
-                      : CallSample(host: _server)));
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => _datachannel
+                  ? DataChannelSample(host: _server)
+                  : CallSample(host: _server),
+            ),
+          );
         }
       }
     });
